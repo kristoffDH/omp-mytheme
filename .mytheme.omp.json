@@ -123,7 +123,7 @@
           "style": "plain",
           "foreground": "#FFFFFF",
           "background": "transparent",
-          "template": "  "
+          "template": " {{ if .Root }}<#FF6B81></>{{ else }}<#FFFFFF></>{{ end }} "
         },
         {
           "type": "text",
