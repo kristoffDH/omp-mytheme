@@ -18,6 +18,20 @@
       "newline": true,
       "segments": [
         {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#FFFFFF",
+          "background": "transparent",
+          "template": "{{ $has1 := and .Env.OMP_LINK1_NAME .Env.OMP_LINK1_PATH }}{{ $has2 := and .Env.OMP_LINK2_NAME .Env.OMP_LINK2_PATH }}{{ $has3 := and .Env.OMP_LINK3_NAME .Env.OMP_LINK3_PATH }}{{ $has4 := and .Env.OMP_LINK4_NAME .Env.OMP_LINK4_PATH }}{{ $has5 := and .Env.OMP_LINK5_NAME .Env.OMP_LINK5_PATH }}{{ if or $has1 (or $has2 (or $has3 (or $has4 $has5))) }} {{ if $has1 }}<#B8F28D></> {{ $p1 := .Env.OMP_LINK1_PATH }}{{ $u1 := printf \"file://%s\" $p1 }}\u001b]8;;{{$u1}}\u001b\\<#FFFFFF>{{ .Env.OMP_LINK1_NAME }}</>\u001b]8;;\u001b\\{{ end }}{{ if $has2 }}  <#444444>|</> <#6C4AB6></> {{ $p2 := .Env.OMP_LINK2_PATH }}{{ $u2 := printf \"file://%s\" $p2 }}\u001b]8;;{{$u2}}\u001b\\<#FFFFFF>{{ .Env.OMP_LINK2_NAME }}</>\u001b]8;;\u001b\\{{ end }}{{ if $has3 }}  <#444444>|</> <#FF8EC7></> {{ $p3 := .Env.OMP_LINK3_PATH }}{{ $u3 := printf \"file://%s\" $p3 }}\u001b]8;;{{$u3}}\u001b\\<#FFFFFF>{{ .Env.OMP_LINK3_NAME }}</>\u001b]8;;\u001b\\{{ end }}{{ if $has4 }}  <#444444>|</> <#FFB347></> {{ $p4 := .Env.OMP_LINK4_PATH }}{{ $u4 := printf \"file://%s\" $p4 }}\u001b]8;;{{$u4}}\u001b\\<#FFFFFF>{{ .Env.OMP_LINK4_NAME }}</>\u001b]8;;\u001b\\{{ end }}{{ if $has5 }}  <#444444>|</> <#7FE7FF></> {{ $p5 := .Env.OMP_LINK5_PATH }}{{ $u5 := printf \"file://%s\" $p5 }}\u001b]8;;{{$u5}}\u001b\\<#FFFFFF>{{ .Env.OMP_LINK5_NAME }}</>\u001b]8;;\u001b\\{{ end }}{{ end }}"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
           "type": "time",
           "style": "plain",
           "foreground": "#FFFFFF",
@@ -66,21 +80,7 @@
           "template": " <#17d7a0></> <#FFFFFF>{{ .Env.OMP_TAG }}</> "
         }
       ]
-    },
-    {
-      "type": "prompt",
-      "alignment": "left",
-      "newline": true,
-      "segments": [
-        {
-          "type": "text",
-          "style": "plain",
-          "foreground": "#FFFFFF",
-          "background": "transparent",
-          "template": "{{ $has1 := and .Env.OMP_LINK1_NAME .Env.OMP_LINK1_PATH }}{{ $has2 := and .Env.OMP_LINK2_NAME .Env.OMP_LINK2_PATH }}{{ $has3 := and .Env.OMP_LINK3_NAME .Env.OMP_LINK3_PATH }}{{ $has4 := and .Env.OMP_LINK4_NAME .Env.OMP_LINK4_PATH }}{{ $has5 := and .Env.OMP_LINK5_NAME .Env.OMP_LINK5_PATH }}{{ if or $has1 (or $has2 (or $has3 (or $has4 $has5))) }} {{ if $has1 }}<#B8F28D></> {{ $p1 := .Env.OMP_LINK1_PATH }}{{ $u1 := printf \"file://%s\" $p1 }}\u001b]8;;{{$u1}}\u001b\\<#FFFFFF>{{ .Env.OMP_LINK1_NAME }}</>\u001b]8;;\u001b\\{{ end }}{{ if $has2 }}  <#444444>|</> <#6C4AB6></> {{ $p2 := .Env.OMP_LINK2_PATH }}{{ $u2 := printf \"file://%s\" $p2 }}\u001b]8;;{{$u2}}\u001b\\<#FFFFFF>{{ .Env.OMP_LINK2_NAME }}</>\u001b]8;;\u001b\\{{ end }}{{ if $has3 }}  <#444444>|</> <#FF8EC7></> {{ $p3 := .Env.OMP_LINK3_PATH }}{{ $u3 := printf \"file://%s\" $p3 }}\u001b]8;;{{$u3}}\u001b\\<#FFFFFF>{{ .Env.OMP_LINK3_NAME }}</>\u001b]8;;\u001b\\{{ end }}{{ if $has4 }}  <#444444>|</> <#FFB347></> {{ $p4 := .Env.OMP_LINK4_PATH }}{{ $u4 := printf \"file://%s\" $p4 }}\u001b]8;;{{$u4}}\u001b\\<#FFFFFF>{{ .Env.OMP_LINK4_NAME }}</>\u001b]8;;\u001b\\{{ end }}{{ if $has5 }}  <#444444>|</> <#7FE7FF></> {{ $p5 := .Env.OMP_LINK5_PATH }}{{ $u5 := printf \"file://%s\" $p5 }}\u001b]8;;{{$u5}}\u001b\\<#FFFFFF>{{ .Env.OMP_LINK5_NAME }}</>\u001b]8;;\u001b\\{{ end }}{{ end }}"
-        }
-      ]
-    },
+    },    
     {
       "type": "prompt",
       "alignment": "left",
