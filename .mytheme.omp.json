@@ -45,6 +45,13 @@
           "template": " <#FF9E64></> <#FFFFFF>{{ round .PhysicalPercentUsed .Precision }}%</> "
         },
         {
+          "type": "battery",
+          "style": "plain",
+          "foreground": "#FFFFFF",
+          "background": "transparent",
+          "template": " | <#9AFF87></> <#FFFFFF>{{ .Percentage }}%</> "
+        },
+        {
           "type": "text",
           "style": "plain",
           "foreground": "#444444",
@@ -57,20 +64,6 @@
           "foreground": "#FFFFFF",
           "background": "transparent",
           "template": " <#17d7a0></> <#FFFFFF>{{ .Env.OMP_TAG }}</> "
-        }
-      ]
-    },
-
-    {
-      "type": "prompt",
-      "alignment": "right",
-      "segments": [
-        {
-          "type": "battery",
-          "style": "plain",
-          "foreground": "#FFFFFF",
-          "background": "transparent",
-          "template": " <#9AFF87></> <#FFFFFF>{{ .Percentage }}%</> "
         }
       ]
     },
@@ -109,7 +102,6 @@
             "branch_gone_icon": ""
           }
         }
-
       ]
     },
 
