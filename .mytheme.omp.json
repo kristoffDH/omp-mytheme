@@ -1,0 +1,144 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 3,
+  "final_space": true,
+  "disable_notice": true,
+  "console_title_template": "{{ .Shell }} in {{ .Folder }}",
+
+  "transient_prompt": {
+    "foreground": "#FFFFFF",
+    "background": "transparent",
+    "template": "<#7E8BA3></> <#FFFFFF>{{ now | date \"15:04:05\" }}</>  <#0092FF></>  <#3A86FF>[</> <#FFFFFF>{{ .PWD }}</> <#3A86FF>]</> "
+  },
+
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "time",
+          "style": "plain",
+          "foreground": "#FFFFFF",
+          "background": "transparent",
+          "template": " <#7E8BA3></> <#FFFFFF>{{ .CurrentDate | date .Format }}</> ",
+          "properties": {
+            "time_format": "01-02 15:04:05"
+          }
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#444444",
+          "background": "transparent",
+          "template": " | "
+        },
+        {
+          "type": "sysinfo",
+          "style": "plain",
+          "foreground": "#FFFFFF",
+          "background": "transparent",
+          "properties": {
+            "precision": 0
+          },
+          "template": " <#FF9E64></> <#FFFFFF>{{ round .PhysicalPercentUsed .Precision }}%</> "
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#444444",
+          "background": "transparent",
+          "template": " | "
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#FFFFFF",
+          "background": "transparent",
+          "template": " <#17d7a0></> <#FFFFFF>{{ .Env.OMP_TAG }}</> "
+        }
+      ]
+    },
+
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "battery",
+          "style": "plain",
+          "foreground": "#FFFFFF",
+          "background": "transparent",
+          "template": " <#9AFF87></> <#FFFFFF>{{ .Percentage }}%</> "
+        }
+      ]
+    },
+
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "#FFFFFF",
+          "background": "transparent",
+          "template": " <#0092FF></>  <#3A86FF>[</> <#FFFFFF>{{ .Path }}</> <#3A86FF>]</>  ",
+          "properties": {
+            "style": "full",
+            "right_format": "<#4CC9F0>%s</>"
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "#FFFFFF",
+          "background": "transparent",
+          "template": " on <#1A921C></> <#FFFFFF>{{ .HEAD }}</>{{ if or .BranchStatus (or (gt (add .Working.Added .Staging.Added) 0) (or (gt (add .Working.Modified .Staging.Modified) 0) (or (gt (add .Working.Deleted .Staging.Deleted) 0) (or (gt .Working.Untracked 0) (gt .StashCount 0))))) }} <#FFFFFF>(</> {{ if .BranchStatus }}{{ .BranchStatus }} {{ end }}{{ if gt (add .Working.Added .Staging.Added) 0 }}<#9AFF87> {{ add .Working.Added .Staging.Added }}</> {{ end }}{{ if gt (add .Working.Modified .Staging.Modified) 0 }}<#FF6B6B> {{ add .Working.Modified .Staging.Modified }}</> {{ end }}{{ if gt (add .Working.Deleted .Staging.Deleted) 0 }}<#FF2740> {{ add .Working.Deleted .Staging.Deleted }}</> {{ end }}{{ if gt .Working.Untracked 0 }}<#7E8BA3> {{ .Working.Untracked }}</> {{ end }}{{ if gt .StashCount 0 }}stash: {{ .StashCount }} {{ end }}<#FFFFFF>)</>{{ end }} ",
+          "properties": {
+            "fetch_status": true,
+            "display_status": true,
+            "fetch_upstream_icon": true,
+            "fetch_stash_count": true,
+            "branch_icon": "",
+            "branch_identical_icon": "",
+            "branch_ahead_icon": "",
+            "branch_behind_icon": "",
+            "branch_gone_icon": ""
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#FFFFFF",
+          "background": "transparent",
+          "template": "  "
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#444444",
+          "background": "transparent",
+          "template": " | "
+        },
+        {
+          "type": "shell",
+          "style": "plain",
+          "foreground": "#FFFFFF",
+          "background": "transparent",
+          "template": " <#2EC4B6></> <#FFFFFF>pwsh</> "
+        }
+      ]
+    }
+  ]
+}
