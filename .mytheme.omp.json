@@ -47,7 +47,7 @@
         {
           "type": "battery",
           "style": "plain",
-          "foreground": "#FFFFFF",
+          "foreground": "#444444",
           "background": "transparent",
           "template": " | <#9AFF87></> <#FFFFFF>{{ .Percentage }}%</> "
         },
