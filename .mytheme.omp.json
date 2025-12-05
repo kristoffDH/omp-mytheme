@@ -143,6 +143,13 @@
           "foreground": "#FFFFFF",
           "background": "transparent",
           "template": " <#2EC4B6></> <#FFFFFF>pwsh</> "
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#999999",
+          "background": "transparent",
+          "template": " |  "
         }
       ]
     }
