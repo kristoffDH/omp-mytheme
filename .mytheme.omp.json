@@ -147,9 +147,16 @@
         {
           "type": "text",
           "style": "plain",
+          "foreground": "#444444",
+          "background": "transparent",
+          "template": " | "
+        },
+        {
+          "type": "text",
+          "style": "plain",
           "foreground": "#999999",
           "background": "transparent",
-          "template": " |  "
+          "template": "  "
         }
       ]
     }
